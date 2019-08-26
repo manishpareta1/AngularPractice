@@ -1,0 +1,35 @@
+***********************************
+<h2>{{titleName}}</h2>
+<h3>{{dummyName}}</h3>
+<div class="address-card">User Address Information section
+    <button *ngIf="isCollasped" (click)="toggleCollapse()">Expand</button>
+    <button *ngIf="!isCollasped" (click)="toggleCollapse()">Collasped</button>
+    <div *ngIf="!isCollasped">
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Designation</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Company</th>
+            </tr>
+
+
+            <tr>
+
+                <td>{{user.fName}}</td>
+                <td>{{user.lName}}</td>
+                <td>{{user.designation}}</td>
+                <td>{{user.address}}</td>
+                <td *ngIf="user.phone.length">
+                    <p *ngFor="let phoneNumber of user.phone">{{phoneNumber}}</p>
+                </td>
+                <td *ngIf="user.company">{{user.company}}</td>
+
+            </tr>
+
+        </table>
+
+
+    </div>
